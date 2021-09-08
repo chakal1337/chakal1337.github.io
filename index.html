@@ -22,6 +22,11 @@
     fstr += "<br>";
    }
    document.body.innerHTML = fstr;
+   var p = document.getElementsByTagName("p");
+   var colo = ["red", "green", "blue"];
+   for(let i = 0; i < p.length; i++) {
+    p[i].style.color = random_choice(colo);
+   }
   }
  </script>
 </html>
