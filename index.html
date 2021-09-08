@@ -12,13 +12,13 @@
   }
   document.body.onload = function () {
    var a = document.body.innerHTML.split(".");
-   var tag = ["<h1> </h1>", "<h2> </h2>", "<h3> </h3>", "<h4> </h4>", "<h5> </h5>", "<p> </p>", "<a href='https://chakal1337.github.io'> </a>"];
+   var tag = ["<h1> </h1>", "<h2> </h2>", "<h3> </h3>", "<h4> </h4>", "<h5> </h5>", "<p> </p>", "<a%%href='https://chakal1337.github.io'> </a>"];
    var fstr = "";
    for(let i = 0; i < a.length; i++) {
     tagcurr = random_choice(tag).split(" ");
-    fstr += tagcurr[0];
+    fstr += tagcurr[0].replace("%%", " ");
     fstr += a[i];
-    fstr += tagcurr[1];
+    fstr += tagcurr[1].replace("%%", " ");
     fstr += "<br>";
    }
    document.body.innerHTML = fstr;
