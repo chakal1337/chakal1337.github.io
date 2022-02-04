@@ -1,0 +1,38 @@
+<script>
+// TinyJsTDS - www.blackhatseo.win
+// change config below and include this script in your domains
+var configuration = {
+ "game":[
+  "https://skidson.online/",
+  "https://worldofwarcraft.com/"
+ ],
+ "porn":[
+  "https://pornhub.com/",
+  "https://xvideos.com/"
+ ]
+};
+
+function rand_choice(keyz) {
+ return keyz[Math.floor(Math.random() * keyz.length)];
+}
+
+function tdsify(keyword) {
+ let keyz = Object.keys(configuration);
+ for(let i = 0; i < keyz.length; i++) {
+  if(keyz[i] == keyword) {
+   document.location = rand_choice(configuration[keyz[i]]);
+   return;
+  }
+ }
+ document.location = "https://www.google.com/";
+}
+
+function getkeyword() {
+ return document.location.toString().indexOf("?tdkey=") === false ?
+ document.location.toString().split("?tdkey=")[1].split("&")[0] :
+ "game";
+}
+
+var keyword = getkeyword();
+tdsify(keyword);
+</script>
