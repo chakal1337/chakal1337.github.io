@@ -28,7 +28,7 @@ function tdsify(keyword) {
 }
 
 function getkeyword() {
- return document.location.toString().indexOf("?tdkey=") === false ?
+ return document.location.toString().indexOf("?tdkey=") !== -1 ?
  document.location.toString().split("?tdkey=")[1].split("&")[0] :
  "game";
 }
